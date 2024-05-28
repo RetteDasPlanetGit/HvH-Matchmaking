@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PlanetHvH | Home{% endblock %}
+
+{% block body %}
+    <body class="bg-gray-900 text-white">
+    <header class="bg-gray-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">CS2 Matchmaking</h1>
+            {% if app.user %}
+                <p class="text-lg mb-8">Hello, {{ app.user.username }}! Ready to join the action?</p>
+            {% else %}
+                <p class="text-lg mb-8">Login or register to join the action!</p>
+                <a href="{{ path('app_login') }}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Login</a>
+                <a href="{{ path('app_register') }}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Register</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <section id="hero" class="bg-gray-800 text-center py-20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-4">Find Your Perfect Match in CS2</h2>
+            <p class="text-xl mb-8">Experience seamless matchmaking and play with players of your skill level.</p>
+            {% if app.user %}
+            <a href="/play" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Play</a>
+            {% else %}
+            <a href="/register" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Get Started</a>
+            {% endif %}
+        </div>
+    </section>
+
+    <section id="features" class="py-20">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Fast Matchmaking</h3>
+                    <p>Quickly find matches with players of similar skill levels.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Ranked System</h3>
+                    <p>Climb the ranks and prove your skill in competitive play.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Custom Tournaments</h3>
+                    <p>Participate in or create your own tournaments for prizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-gray-800 text-center py-20">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8">About Us</h2>
+            <p class="text-xl mb-8">We are dedicated to providing the best matchmaking experience for Counter Strike 2 players. Our system ensures that you get fair and balanced matches every time you play.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-center py-4">
+        <div class="container mx-auto">
+            <p>&copy; 2024 CS2 Matchmaking. All rights reserved.</p>
+        </div>
+    </footer>
+    </body>
+{% endblock %}

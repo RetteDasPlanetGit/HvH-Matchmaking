@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PlanetHvH | Dashboard{% endblock %}
+
+{% block body %}
+<div class="min-h-screen bg-gray-900 text-white">
+    <header class="bg-gray-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">CS2 Matchmaking</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="" class="hover:text-gray-400">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold mb-4">Welcome to Your Dashboard, {{ app.user.username }}!</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Card 1: Profile -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Profile</h2>
+                <p class="text-gray-300">View and edit your profile information.</p>
+                <a href="" class="block mt-4 text-blue-500 hover:text-blue-700">Edit Profile</a>
+            </div>
+
+            <!-- Card 2: Change Password -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Change Password</h2>
+                <p class="text-gray-300">Change your account password for security.</p>
+                <a href="" class="block mt-4 text-blue-500 hover:text-blue-700">Change Password</a>
+            </div>
+
+            <!-- Card 3: Logout -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Logout</h2>
+                <p class="text-gray-300">Logout from your account.</p>
+                <a href="{{ path('app_logout') }}" class="block mt-4 text-red-500 hover:text-red-700">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
